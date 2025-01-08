@@ -24,9 +24,13 @@ def init_cam():
 
 def get_pose_name(index):
     names = {
-        0: "goddess",
-        1: "plankup",
-        2: "tree",
+        0: "cobra",
+        1: "downdog",
+        2: "goddess",
+        3: "mountain",
+        4: "plankup",
+        5: "tree",
+        6: "warrior",
     }
     return str(names[index])
 
