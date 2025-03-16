@@ -24,7 +24,7 @@ def augment_image(image, output_dir, augmentations, base_filename, num_augmentat
         cv2.imwrite(filepath, augmented_image)
     print(f"{num_augmentations} augmented images saved for {base_filename}")
 
-# Define augmentation pipeline
+
 augmentations = Compose([
     HorizontalFlip(p=0.5),
     ShiftScaleRotate(shift_limit=0.1, scale_limit=0.2, rotate_limit=30, p=0.8),
@@ -36,14 +36,14 @@ augmentations = Compose([
     Perspective(scale=(0.05, 0.1), p=0.4),
 ], p=1.0)
 
-# Paths
-input_folder = "C:/Users/inoug/Desktop/Dataset/mountain_pose"  # Replace with the folder containing your images
-output_folder = "C:/Users/inoug/Desktop/Dataset/mountain"  # Folder to save augmented images
-num_augmentations_per_image = 20  # Number of augmented versions per image
 
-# Process all images in the input folder
+input_folder = "C:/Users/inoug/Desktop/Dataset/mountain_pose" 
+output_folder = "C:/Users/inoug/Desktop/Dataset/mountain"  
+num_augmentations_per_image = 20  
+
+
 for filename in os.listdir(input_folder):
-    if filename.lower().endswith((".png", ".jpg", ".jpeg")):  # Filter image files
+    if filename.lower().endswith((".png", ".jpg", ".jpeg")):  
         image_path = os.path.join(input_folder, filename)
         image = cv2.imread(image_path)
         if image is not None:

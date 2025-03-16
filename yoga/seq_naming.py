@@ -32,7 +32,7 @@ def rename_and_remove_duplicates(folder_path, output_folder):
         if filename.lower().endswith((".png", ".jpg", ".jpeg")):  # Filter for image files
             old_path = os.path.join(folder_path, filename)
 
-            # Calculate binary hash
+            
             img_hash = calculate_hash(old_path)
             if img_hash in seen_hashes:
                 print(f"Duplicate found: {filename} - Skipping")
